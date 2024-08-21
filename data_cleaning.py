@@ -20,10 +20,15 @@ def apply_title_before_comma(text):
 
 df['Address'] = df['Address'].apply(apply_title_before_comma)
 df["Employer"] = df["Employer"].str.upper().str.title()
+df['Year'] = '2022'
+
 df2['Address'] = df2['Address'].apply(apply_title_before_comma)
 df2["Employer"] = df2["Employer"].str.upper().str.title()
+df2['Year'] = '2023'
+
 df3['Address'] = df3['Address'].apply(apply_title_before_comma)
 df3["Employer"] = df3["Employer"].str.upper().str.title()
+df3['Year'] = '2024'
 
 # Save the updated DataFrame to a new Excel file
 df.to_excel('Final_2022.xlsx', index= False)
