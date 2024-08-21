@@ -21,15 +21,15 @@ def apply_title_before_comma(text):
 #Applying the function to the DataFrames while creating a new column named Year
 df['Address'] = df['Address'].apply(apply_title_before_comma)
 df["Employer"] = df["Employer"].str.upper().str.title()
-df['Year'] = '2022'
+df['Year'] = 2022 #DataType is Integer
 
 df2['Address'] = df2['Address'].apply(apply_title_before_comma)
 df2["Employer"] = df2["Employer"].str.upper().str.title()
-df2['Year'] = '2023'
+df2['Year'] = 2023 #DataType is Integer
 
 df3['Address'] = df3['Address'].apply(apply_title_before_comma)
 df3["Employer"] = df3["Employer"].str.upper().str.title()
-df3['Year'] = '2024'
+df3['Year'] = 2024 #DataType is Integer
 
 # Save the updated DataFrame to a new Excel file
 df.to_excel('Final_2022.xlsx', index= False)
@@ -41,5 +41,5 @@ final_df = pd.concat([df,df2,df3], ignore_index=True)
 
 #Save combined DataFrames into new excel file
 final_df.to_excel('Concat_Data.xlsx', index=False)
-print(df2.head(10))
+print(final_df.head(10))
 
