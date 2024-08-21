@@ -18,6 +18,7 @@ def apply_title_before_comma(text):
             return text
     return text  # Return the value as is if it's not a string
 
+#Applying the function to the DataFrames while creating a new column named Year
 df['Address'] = df['Address'].apply(apply_title_before_comma)
 df["Employer"] = df["Employer"].str.upper().str.title()
 df['Year'] = '2022'
@@ -35,4 +36,10 @@ df.to_excel('Final_2022.xlsx', index= False)
 df2.to_excel('Final_2023.xlsx', index=False)
 df3.to_excel('Final_2024Q1.xlsx', index=False)
 
+#Appending all DataFrames into one
+final_df = pd.concat([df,df2,df3], ignore_index=True)
+
+#Save combined DataFrames into new excel file
+final_df.to_excel('Concat_Data.xlsx', index=False)
+print(df2.head(10))
 
