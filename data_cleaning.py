@@ -41,5 +41,5 @@ final_df = pd.concat([df,df2,df3], ignore_index=True)
 
 #Save combined DataFrames into new excel file
 final_df.to_excel('Concat_Data.xlsx', index=False)
-print(final_df.head(10))
+
 
